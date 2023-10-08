@@ -15,7 +15,7 @@ source("http://zzlab.net/GAPIT/gapit_functions.txt")
 
 
 2. Importing Genotyping data
--GAPIT accepts multiple input dataformats, including both numeric, hapmap, and PLINK     genotype formats
+-GAPIT accepts multiple input dataformats, including both numeric, hapmap, and PLINK genotype formats
 -Import the data providing the full path
 -Make sure head is set FALSE
 
@@ -53,10 +53,10 @@ gwas<-GAPIT(Y=phenotype,G=genotype,PCA.total=5,
   significant genomic regions linked to the trait
 - The QQ-plot in GWAS assesses the model's ability to account for population structure and familial relatedness by plotting 
   the negative logarithms of P-values against their   expected values under the null hypothesis, with most points expected 
-  to lie on the diagonal line, while deviations from this line, primarily in the upper right section,   suggest potential 
+  to lie on the diagonal line, while deviations from this line, primarily in the upper right section,suggest potential 
   trait associations and spurious associations related to insufficient   model correction for such factors
 - Association Table
-  The GWAS result table provides a detailed summary of appropriate GWAS results. The      rows display theresults for each 
+  The GWAS result table provides a detailed summary of appropriate GWAS results. The rows display theresults for each 
   SNP above the user-specified minor allele frequency    threshold. The SNPs sorted by their
   position in the chromosome. The H&B P.Value is FDR adjusted P values by H&B method. 
 
