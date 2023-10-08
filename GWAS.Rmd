@@ -35,8 +35,9 @@ phenotype <- read.table("C:/Users/Arbin/Downloads/Watkins_phenotype_H2006_for_Ta
 - Y argument takes phenotypic data
 - G argument takes genotypic data
 - model stands for which model you want to take into consideration:
-  The Mixed Linear Model (MLM) is one of the most effective methods for controlling       false positives in GWAS. This model simultaneously incorporates both population         structure and cryptic relationship (Yu et al. Nature Genetics, 2006, 38: 203-208)
-- SNP.MAF of 0.05 will retain only those SNPs where the less common allele is present in   the population at a frequency of 0.05 or higher
+  The Mixed Linear Model (MLM) is one of the most effective methods for controlling false positives in GWAS. This model 
+  simultaneously incorporates both population structure and cryptic relationship
+- SNP.MAF of 0.05 will retain only those SNPs where the less common allele is present in the population at a frequency of 0.05 or higher
 
 ```{r}
 gwas<-GAPIT(Y=phenotype,G=genotype,PCA.total=5,
@@ -44,17 +45,24 @@ gwas<-GAPIT(Y=phenotype,G=genotype,PCA.total=5,
   model= "MLM",
   Random.model=FALSE
 )
-
+  
 ```
 5. Output are in .csv files,PDFs and interactive plots in HTMLs
-- Manhattan plots visualize GWAS results by plotting genomic SNP positions on the X-axis   and the negative logarithm of P-values from the F-test for assessing SNP-trait          associations on the Y-axis. Prominent peaks in the plot indicate significant genomic    regions linked to the trait
-- The QQ-plot in GWAS assesses the model's ability to account for population structure    and familial relatedness by plotting the negative logarithms of P-values against their   expected values under the null hypothesis, with most points expected to lie on the      diagonal line, while deviations from this line, primarily in the upper right section,   suggest potential trait associations and spurious associations related to insufficient   model correction for such factors
+- Manhattan plots visualize GWAS results by plotting genomic SNP positions on the X-axis and the negative logarithm of P- 
+  values from the F-test for assessing SNP-trait associations on the Y-axis. Prominent peaks in the plot indicate 
+  significant genomic regions linked to the trait
+- The QQ-plot in GWAS assesses the model's ability to account for population structure and familial relatedness by plotting 
+  the negative logarithms of P-values against their   expected values under the null hypothesis, with most points expected 
+  to lie on the diagonal line, while deviations from this line, primarily in the upper right section,   suggest potential 
+  trait associations and spurious associations related to insufficient   model correction for such factors
 - Association Table
-  The GWAS result table provides a detailed summary of appropriate GWAS results. The      rows display theresults for each SNP above the user-specified minor allele frequency    threshold. The SNPs sorted by their
-  position in the chromosome. The H&B P.Value is FDR adjusted P values by H&B method. N
+  The GWAS result table provides a detailed summary of appropriate GWAS results. The      rows display theresults for each 
+  SNP above the user-specified minor allele frequency    threshold. The SNPs sorted by their
+  position in the chromosome. The H&B P.Value is FDR adjusted P values by H&B method. 
 
 
 
 References:
-- Wang, J. & Zhang, Z. GAPIT Version 3: Boosting Power and Accuracy for Genomic            Association and Prediction.Genomics. Proteomics Bioinformatics 19, 1–12 (2021).
-- Zhang, Z. et al. Mixed linear model approach adapted for genome-wide association        studies. Nat. Genet. 42, 355–60(2010).
+- Wang, J. & Zhang, Z. GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction.Genomics. 
+     Proteomics Bioinformatics 19, 1–12 (2021).
+- Zhang, Z. et al. Mixed linear model approach adapted for genome-wide association studies. Nat. Genet. 42, 355–60(2010).
